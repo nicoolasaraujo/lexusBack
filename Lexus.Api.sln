@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lexus.Api", "Lexus.Api\Lexus.Api.csproj", "{101D2DC0-30D1-4A60-BF9D-46420CB7AC53}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lexus.Api", "Lexus.Api\Lexus.Api.csproj", "{101D2DC0-30D1-4A60-BF9D-46420CB7AC53}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lexus.Tests", "Lexus.Tests\Lexus.Tests.csproj", "{397954EB-2F6B-4594-B56F-C91B067EF69E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lexus.Application", "Lexus.Application\Lexus.Application.csproj", "{320CEE30-255D-4A2A-998C-77CA5DC94982}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lexus.Core", "Lexus.Core\Lexus.Core.csproj", "{07CE045C-575D-4597-84CB-EFE5FBAEDA84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lexus.Infra", "Lexus.Infra\Lexus.Infra.csproj", "{6498900D-8500-4FED-9926-E2416C8262BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{101D2DC0-30D1-4A60-BF9D-46420CB7AC53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{101D2DC0-30D1-4A60-BF9D-46420CB7AC53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{101D2DC0-30D1-4A60-BF9D-46420CB7AC53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{397954EB-2F6B-4594-B56F-C91B067EF69E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{397954EB-2F6B-4594-B56F-C91B067EF69E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{397954EB-2F6B-4594-B56F-C91B067EF69E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{397954EB-2F6B-4594-B56F-C91B067EF69E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{320CEE30-255D-4A2A-998C-77CA5DC94982}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{320CEE30-255D-4A2A-998C-77CA5DC94982}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{320CEE30-255D-4A2A-998C-77CA5DC94982}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{320CEE30-255D-4A2A-998C-77CA5DC94982}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07CE045C-575D-4597-84CB-EFE5FBAEDA84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07CE045C-575D-4597-84CB-EFE5FBAEDA84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07CE045C-575D-4597-84CB-EFE5FBAEDA84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07CE045C-575D-4597-84CB-EFE5FBAEDA84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6498900D-8500-4FED-9926-E2416C8262BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6498900D-8500-4FED-9926-E2416C8262BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6498900D-8500-4FED-9926-E2416C8262BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6498900D-8500-4FED-9926-E2416C8262BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
