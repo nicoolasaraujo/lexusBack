@@ -22,12 +22,15 @@ namespace Lexus.Api.Controllers
     public class AuthController : CustomController
     {
         private readonly IUserService userService;
+        private readonly ITokenService tokenService;
         private readonly IConfiguration configuration;
 
-        public AuthController(IUserService userService, IConfiguration configuration)
+        public AuthController(
+            IUserService userService, IConfiguration configuration, ITokenService tokenService)
         {
             this.userService = userService;
             this.configuration = configuration;
+            this.tokenService = tokenService;
         }
             
         [HttpPost]
@@ -40,7 +43,7 @@ namespace Lexus.Api.Controllers
             if (result.Succeeded)
             {
                 //assinar jwt
-                return CustomResponse(new { User = result.UserData, Token = TokenService.GenerateToken(configuration) } );
+                return CustomResponse(new { User = result.UserData, Token = this.tokenService.GenerateToken(result.UserData) } );
             }
             else
             {

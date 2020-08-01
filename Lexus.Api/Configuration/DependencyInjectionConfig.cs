@@ -12,7 +12,13 @@ namespace Lexus.Api.Configuration
     {
         public static void RegisterDependenciesInjection(this IServiceCollection services)
         {
+            RegisterServices(services);
+        }
+
+        private static void RegisterServices(IServiceCollection services)
+        {
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ITokenService, TokenService>();
         }
     }
 }
