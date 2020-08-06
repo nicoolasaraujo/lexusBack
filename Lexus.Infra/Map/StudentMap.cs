@@ -1,4 +1,5 @@
-﻿using Lexus.Core.Models;
+﻿using Lexus.Core.Enums;
+using Lexus.Core.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -21,6 +22,9 @@ namespace Lexus.Infra.Map
               .HasMaxLength(100)
               .IsRequired();
 
+            var userId1 = Guid.Parse("29ebc350-c831-4ec3-8eca-077f995b47ff");
+            var userStudent = new Student() { StudentId = userId1, FirstName = "Joãozinho", LastName = "Da Silva", BirthDay = DateTime.Now, Gender = EnGender.MALE };
+            builder.HasData(userStudent);
         }
     }
 }

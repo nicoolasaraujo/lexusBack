@@ -1,4 +1,5 @@
-﻿using Lexus.Core.Models;
+﻿using Lexus.Core.Enums;
+using Lexus.Core.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using MySql.Data.MySqlClient;
@@ -40,8 +41,9 @@ namespace Lexus.Infra.Map
 
         private void FillData(EntityTypeBuilder<User> builder)
         {
-            builder.HasData(new User(Guid.NewGuid(), "nicoolas", "secretpass"));
-        }
+            var userId1 = Guid.Parse("29ebc350-c831-4ec3-8eca-077f995b47ff");
+            builder.HasData(new User(userId1, "nicoolas", "secretpass"));
 
+        }
     }
 }
