@@ -1,19 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
-using Lexus.Application.Services;
-using Lexus.Core.Dto;
+﻿using Lexus.Core.Dto;
 using Lexus.Core.Interfaces.Services;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
+using System.Threading.Tasks;
 
 namespace Lexus.Api.Controllers
 {
@@ -22,32 +10,29 @@ namespace Lexus.Api.Controllers
     public class AuthController : CustomController
     {
         private readonly IUserService userService;
-        private readonly IConfiguration configuration;
+        private readonly ITokenService tokenService;
 
-        public AuthController(IUserService userService, IConfiguration configuration)
+        public AuthController(
+            IUserService userService, ITokenService tokenService)
         {
             this.userService = userService;
-            this.configuration = configuration;
+            this.tokenService = tokenService;
         }
             
         [HttpPost]
         [Route("login")]
-        [Authorize]
-        public IActionResult Login(LoginDto login)
+        public async Task<IActionResult> Login(LoginDto login)
         {
-            var result = this.userService.Login(login.Username, login.Password);
+            LoginResponse result = await this.userService.Login(login.Username, login.Password);
 
             if (result.Succeeded)
             {
-                //assinar jwt
-                return CustomResponse(new { User = result.UserData, Token = TokenService.GenerateToken(configuration) } );
+                return CustomResponse(new { User = result.UserData.CustomData, Token = this.tokenService.GenerateToken(result.UserData) } );
             }
             else
             {
-                this.AddError("Usuário ou senha incorreto!");
-                return CustomResponse();
+                return NotFound("Usuário ou senha incorretos");
             }
         }
-
     }
 }

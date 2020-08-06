@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Lexus.Api.Configuration;
+using Lexus.Infra.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -28,6 +30,7 @@ namespace Lexus.Api
         {
             services.AddControllers();
             services.AddSwaggerConfiguration();
+            services.AddDbContext<LexusContext>(options => options.UseMySql(this.Configuration.GetConnectionString("DefaultConnection")));
             services.RegisterDependenciesInjection();
             services.RegisterJwtAuthentication(this.Configuration);
         }

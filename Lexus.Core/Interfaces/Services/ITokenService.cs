@@ -2,12 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Lexus.Core.Interfaces.Services
 {
-    public interface IUserService
+    public interface ITokenService
     {
-        Task<LoginResponse> Login(string username, string password);
+        public string GenerateToken(LoginResponseDto loginResult);
     }
 }

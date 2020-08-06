@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Lexus.Core.Dto
 {
-    public class LoginResult
+    public class LoginResponse
     {
-        public object UserData { get; set; }
+        public LoginResponseDto UserData { get; set; }
         public bool Succeeded { get; set; }
     }
 }

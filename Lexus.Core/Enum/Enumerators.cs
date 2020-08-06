@@ -9,4 +9,10 @@ namespace Lexus.Core.Enums
         TEACHER, 
         STUDENT
     }
+
+    public enum EnGender
+    {
+        FEMALE,
+        MALE
+    }
 }
